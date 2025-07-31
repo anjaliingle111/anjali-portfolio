@@ -817,9 +817,7 @@ const Portfolio = () => {
                 }}
               >
                 <div className="flex items-start gap-6">
-                  <div 
-                    className={`w-16 h-16 rounded-lg flex items-center justify-center p-2 bg-gradient-to-r ${job.color}`}
-                  >
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center p-2 bg-white">
                     {job.logo.startsWith('http') ? (
                       <img 
                         src={job.logo} 
@@ -827,7 +825,7 @@ const Portfolio = () => {
                         className="w-12 h-12 object-contain"
                       />
                     ) : (
-                      <div className="text-white font-bold text-2xl">{job.logo}</div>
+                      <div className="text-gray-800 font-bold text-2xl">{job.logo}</div>
                     )}
                   </div>
                   <div className="flex-1">
