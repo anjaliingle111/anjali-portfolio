@@ -652,6 +652,10 @@ const Portfolio = () => {
                   <Calendar size={18} style={{ color: 'rgb(253, 191, 5)' }} />
                   <span>Open to opportunities</span>
                 </div>
+                <div className="flex items-center gap-2 text-gray-300">
+                  <Database size={18} style={{ color: 'rgb(125, 42, 232)' }} />
+                  <span>Open to relocation</span>
+                </div>
               </div>
 
               <div className="flex gap-4">
