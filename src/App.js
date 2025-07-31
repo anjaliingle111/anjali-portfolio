@@ -635,7 +635,7 @@ const Portfolio = () => {
                 </span>
               </h1>
               <h2 className="text-2xl md:text-3xl mb-6" style={{ color: 'rgb(253, 191, 5)' }}>
-                Masters Student in Data Analytics Engineering
+                Data Analyst and Engineer
               </h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 Masters student in Data Analytics Engineering at Northeastern University 
