@@ -1,35 +1,31 @@
+// App.js - Main Portfolio with Routing
 import React, { useState, useEffect } from 'react';
-import { Github, Mail, Linkedin, MapPin, Calendar, Award, TrendingUp, Database, BarChart3, Code, Users, Briefcase, GraduationCap, Phone } from 'lucide-react';
+import { Github, Mail, Linkedin, MapPin, Calendar, Award, TrendingUp, Database, BarChart3, Code, Users, Briefcase, GraduationCap, Phone, ArrowLeft, ExternalLink } from 'lucide-react';
 
 const Portfolio = () => {
+  const [currentView, setCurrentView] = useState('home'); // 'home' or project id
   const [activeSection, setActiveSection] = useState('home');
-  const [isVisible, setIsVisible] = useState({
-    home: true,
-    about: true,
-    experience: true,
-    projects: true,
-    skills: true,
-    contact: true
-  });
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
+    if (currentView === 'home') {
+      const handleScroll = () => {
+        const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+        const current = sections.find(section => {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 100 && rect.bottom >= 100;
+          }
+          return false;
+        });
+        if (current) setActiveSection(current);
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [currentView]);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -37,7 +33,7 @@ const Portfolio = () => {
 
   const projects = [
     {
-      id: 1,
+      id: 'fraud-detection',
       title: "Enterprise Fraud Detection Platform",
       description: "Built a production-ready fraud detection system analyzing 50+ risk factors with 79.86% AUC performance. Implemented real-time processing, GDPR compliance, and comprehensive ROI analysis for financial institutions.",
       tech: ["Python", "scikit-learn", "Flask", "PostgreSQL", "Docker"],
@@ -46,7 +42,7 @@ const Portfolio = () => {
       category: "Machine Learning"
     },
     {
-      id: 2,
+      id: 'fake-news-bert',
       title: "Fake News Detection with BERT",
       description: "Advanced NLP system using BERT transformers and ensemble methods for fake news classification. Achieved 67.8% accuracy with comprehensive feature engineering including sentiment analysis and readability scores.",
       tech: ["Python", "BERT", "TensorFlow", "NLTK", "scikit-learn"],
@@ -55,7 +51,7 @@ const Portfolio = () => {
       category: "NLP/AI"
     },
     {
-      id: 3,
+      id: 'carepath-d',
       title: "CarePath-D: Diabetes Readmission Predictor",
       description: "MLOps pipeline predicting hospital readmissions for diabetic patients. Features FastAPI deployment, automated CI/CD with GitHub Actions, and production monitoring with 85% accuracy on clinical data.",
       tech: ["Python", "FastAPI", "scikit-learn", "GitHub Actions", "CI/CD", "Render"],
@@ -64,7 +60,7 @@ const Portfolio = () => {
       category: "Healthcare Analytics"
     },
     {
-      id: 4,
+      id: 'hr-analytics',
       title: "Enterprise HR Analytics Platform",
       description: "Real-time data engineering platform processing 1,000+ employee records using Apache Kafka and PostgreSQL. Integrated with Power BI for executive dashboards managing $138M+ payroll operations.",
       tech: ["Apache Kafka", "PostgreSQL", "Power BI", "Apache Airflow", "Docker"],
@@ -73,7 +69,7 @@ const Portfolio = () => {
       category: "Data Engineering"
     },
     {
-      id: 5,
+      id: 'manufacturing-quality',
       title: "Manufacturing Quality Pipeline",
       description: "Real-time quality prediction system for CMP manufacturing processes. Implemented Kafka streaming, ETL pipelines, ML models with CI/CD automation achieving 88.2% accuracy for production optimization.",
       tech: ["Apache Kafka", "PostgreSQL", "FastAPI", "scikit-learn", "Docker", "CI/CD"],
@@ -82,7 +78,7 @@ const Portfolio = () => {
       category: "Manufacturing Analytics"
     },
     {
-      id: 6,
+      id: 'ehr-mistral',
       title: "EHR System with Mistral AI",
       description: "Intelligent Electronic Health Record system leveraging Mistral AI for medical record processing and clinical decision support with advanced natural language processing capabilities.",
       tech: ["Python", "Mistral AI", "FastAPI", "PostgreSQL", "React"],
@@ -145,6 +141,368 @@ const Portfolio = () => {
     }
   ];
 
+  // Project Detail Components
+  const ProjectDetail = ({ project }) => {
+    const getProjectDetails = (projectId) => {
+      switch (projectId) {
+        case 'fraud-detection':
+          return {
+            overview: "A comprehensive fraud detection platform designed for financial institutions to identify and prevent fraudulent transactions in real-time. The system processes over 50 risk factors and provides actionable insights with GDPR compliance.",
+            architecture: [
+              "Data Ingestion Layer - Real-time transaction processing",
+              "Feature Engineering - 50+ risk factor calculations",
+              "ML Pipeline - Random Forest with 79.86% AUC",
+              "API Gateway - RESTful endpoints for predictions",
+              "Compliance Module - GDPR/CCPA data masking",
+              "Dashboard - ROI analysis and monitoring"
+            ],
+            workflow: [
+              "Transaction data ingested via API",
+              "Real-time feature extraction and enrichment",
+              "ML model scoring and risk assessment",
+              "Business rules engine evaluation",
+              "Decision output with explanation",
+              "Audit trail and compliance logging"
+            ],
+            keyFeatures: [
+              "Real-time fraud detection with sub-second response",
+              "50+ fraud risk factors including behavioral analytics",
+              "GDPR/CCPA compliant privacy masking",
+              "Cost-benefit analysis with ROI calculations",
+              "Production-ready REST APIs",
+              "Comprehensive audit trails"
+            ]
+          };
+        
+        case 'fake-news-bert':
+          return {
+            overview: "Advanced NLP system combining BERT transformers with traditional ML approaches for fake news detection. Implements comprehensive feature engineering including sentiment analysis, readability scores, and ensemble methods.",
+            architecture: [
+              "Data Preprocessing - Text cleaning and normalization",
+              "Feature Engineering - Linguistic and readability features",
+              "BERT Model - Fine-tuned for news classification",
+              "Traditional ML - Ensemble of RF, SVM, Naive Bayes",
+              "Evaluation Module - Comprehensive metrics analysis",
+              "Prediction API - Real-time classification endpoint"
+            ],
+            workflow: [
+              "News article text input and preprocessing",
+              "Feature extraction (sentiment, readability, NER)",
+              "BERT tokenization and encoding",
+              "Ensemble model prediction",
+              "Confidence score calculation",
+              "Classification result with explanations"
+            ],
+            keyFeatures: [
+              "BERT transformer fine-tuning for news domain",
+              "Ensemble methods combining multiple algorithms",
+              "67.8% accuracy on real-world news data",
+              "Comprehensive feature engineering pipeline",
+              "SMOTE for handling class imbalance",
+              "Explainability through feature importance"
+            ]
+          };
+        
+        case 'carepath-d':
+          return {
+            overview: "MLOps pipeline for predicting hospital readmissions among diabetic patients using clinical data. Features production deployment with automated CI/CD, monitoring, and FastAPI integration.",
+            architecture: [
+              "Data Pipeline - Clinical data processing and validation",
+              "Feature Store - Engineered features from patient records",
+              "ML Training - Random Forest with hyperparameter tuning",
+              "Model Registry - Versioned model storage on Google Drive",
+              "API Service - FastAPI with Swagger documentation",
+              "CI/CD Pipeline - GitHub Actions for automated deployment"
+            ],
+            workflow: [
+              "Clinical data ingestion and validation",
+              "Feature engineering from patient demographics",
+              "Model training with cross-validation",
+              "Model deployment to Render platform",
+              "API endpoint for real-time predictions",
+              "Monitoring and performance tracking"
+            ],
+            keyFeatures: [
+              "85% accuracy on clinical readmission data",
+              "Production MLOps pipeline with CI/CD",
+              "FastAPI with comprehensive documentation",
+              "Automated model retraining workflows",
+              "Real-time prediction API endpoints",
+              "Healthcare-compliant data processing"
+            ]
+          };
+        
+        case 'hr-analytics':
+          return {
+            overview: "Enterprise-grade HR analytics platform processing real-time employee data for 1,000+ employees across 5 departments. Features Lambda architecture with streaming analytics and Power BI integration.",
+            architecture: [
+              "Data Sources - Employee, performance, engagement data",
+              "Streaming Layer - Apache Kafka for real-time updates",
+              "Processing Layer - ksqlDB for stream analytics",
+              "Storage Layer - PostgreSQL with dimensional modeling",
+              "Orchestration - Apache Airflow for workflow management",
+              "Visualization - Power BI with REST API integration"
+            ],
+            workflow: [
+              "Employee data changes captured via CDC",
+              "Real-time streaming through Kafka topics",
+              "Stream processing with ksqlDB transformations",
+              "Data warehouse updates in PostgreSQL",
+              "Airflow orchestrates batch processes",
+              "Power BI dashboards refresh automatically"
+            ],
+            keyFeatures: [
+              "Real-time processing of 1,000+ employee records",
+              "Lambda architecture with batch + stream processing",
+              "$138M+ payroll management capabilities",
+              "7 REST API endpoints for Power BI integration",
+              "Comprehensive employee analytics and KPIs",
+              "Docker containerized microservices architecture"
+            ]
+          };
+        
+        case 'manufacturing-quality':
+          return {
+            overview: "Real-time manufacturing quality prediction system for CMP (Chemical Mechanical Planarization) processes. Integrates streaming sensor data with ML models for proactive quality control.",
+            architecture: [
+              "Data Ingestion - Kafka streaming from manufacturing sensors",
+              "ETL Pipeline - Real-time data transformation and validation",
+              "ML Pipeline - Random Forest for quality prediction",
+              "API Layer - FastAPI for real-time predictions",
+              "Web Dashboard - React-based quality monitoring",
+              "CI/CD - Automated testing and deployment pipeline"
+            ],
+            workflow: [
+              "Manufacturing sensor data streamed via Kafka",
+              "Real-time ETL processing and feature engineering",
+              "ML model inference for quality prediction",
+              "API endpoint serves predictions to dashboard",
+              "Quality alerts and monitoring system",
+              "Continuous model performance tracking"
+            ],
+            keyFeatures: [
+              "88.2% accuracy on real manufacturing data",
+              "Real-time processing of 720+ production records",
+              "End-to-end MLOps with CI/CD automation",
+              "Interactive web dashboard for quality monitoring",
+              "Proactive quality control and defect prevention",
+              "Integration with existing manufacturing systems"
+            ]
+          };
+        
+        case 'ehr-mistral':
+          return {
+            overview: "Intelligent Electronic Health Record system leveraging Mistral AI for advanced medical record processing and clinical decision support with natural language understanding capabilities.",
+            architecture: [
+              "Frontend - React-based healthcare interface",
+              "API Gateway - FastAPI with healthcare endpoints",
+              "AI Engine - Mistral AI for medical text processing",
+              "Database - PostgreSQL with healthcare data models",
+              "Security Layer - HIPAA-compliant data protection",
+              "Integration Layer - Healthcare system connectivity"
+            ],
+            workflow: [
+              "Medical records input and validation",
+              "Mistral AI processes clinical text",
+              "NLP extraction of medical entities",
+              "Clinical decision support recommendations",
+              "Secure storage in healthcare database",
+              "Integration with existing EHR systems"
+            ],
+            keyFeatures: [
+              "Mistral AI powered medical text analysis",
+              "Advanced NLP for clinical documentation",
+              "HIPAA-compliant healthcare data processing",
+              "Clinical decision support capabilities",
+              "Integration-ready healthcare APIs",
+              "Scalable architecture for healthcare providers"
+            ]
+          };
+        
+        default:
+          return {
+            overview: "Project details coming soon...",
+            architecture: [],
+            workflow: [],
+            keyFeatures: []
+          };
+      }
+    };
+
+    const details = getProjectDetails(project.id);
+
+    return (
+      <div className="min-h-screen" style={{
+        background: 'linear-gradient(135deg, rgb(2, 0, 36) 0%, rgb(14, 19, 24) 50%, rgb(2, 0, 25) 100%)'
+      }}>
+        {/* Navigation */}
+        <nav className="fixed top-0 w-full z-50 transition-all duration-500" style={{
+          backgroundColor: 'rgba(14, 19, 24, 0.95)',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+        }}>
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex justify-between items-center py-4">
+              <div className="text-2xl font-bold text-white">
+                Anjali <span style={{ color: 'rgb(253, 191, 5)' }}>Ingle</span>
+              </div>
+              <button
+                onClick={() => setCurrentView('home')}
+                className="flex items-center gap-2 text-white hover:text-yellow-400 transition-all duration-300"
+              >
+                <ArrowLeft size={20} />
+                Back to Portfolio
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        {/* Project Hero */}
+        <section className="pt-24 pb-16">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <div className="text-6xl mb-6">{project.image}</div>
+              <div className="text-sm font-medium mb-2" style={{ color: 'rgb(253, 191, 5)' }}>
+                {project.category}
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                {project.title}
+              </h1>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                {project.description}
+              </p>
+              
+              <div className="flex justify-center gap-4 mt-8">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+                  style={{
+                    background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))',
+                    color: 'rgb(0, 0, 0)'
+                  }}
+                >
+                  <Github size={20} />
+                  View Source Code
+                </a>
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-3 justify-center mb-16">
+              {project.tech.map((tech) => (
+                <span 
+                  key={tech} 
+                  className="px-4 py-2 rounded-full text-sm font-medium text-black"
+                  style={{ backgroundColor: 'rgb(253, 191, 5)' }}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Project Details */}
+        <section className="pb-16">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-12">
+              
+              {/* Overview */}
+              <div className="p-8 rounded-xl" style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h2 className="text-2xl font-bold text-white mb-6">📋 Project Overview</h2>
+                <p className="text-gray-300 leading-relaxed">{details.overview}</p>
+              </div>
+
+              {/* Key Features */}
+              <div className="p-8 rounded-xl" style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h2 className="text-2xl font-bold text-white mb-6">⭐ Key Features</h2>
+                <ul className="space-y-3">
+                  {details.keyFeatures.map((feature, index) => (
+                    <li key={index} className="text-gray-300 flex items-start gap-2">
+                      <span style={{ color: 'rgb(253, 191, 5)' }} className="mt-1">•</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Architecture */}
+              <div className="p-8 rounded-xl" style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h2 className="text-2xl font-bold text-white mb-6">🏗️ System Architecture</h2>
+                <div className="space-y-3">
+                  {details.architecture.map((component, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 rounded-lg" style={{
+                      background: 'rgba(253, 191, 5, 0.1)',
+                      border: '1px solid rgba(253, 191, 5, 0.2)'
+                    }}>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style={{
+                        background: 'rgb(253, 191, 5)',
+                        color: 'rgb(0, 0, 0)'
+                      }}>
+                        {index + 1}
+                      </div>
+                      <span className="text-gray-300">{component}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Workflow */}
+              <div className="p-8 rounded-xl" style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h2 className="text-2xl font-bold text-white mb-6">🔄 Workflow Process</h2>
+                <div className="space-y-4">
+                  {details.workflow.map((step, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mt-1" style={{
+                        background: 'linear-gradient(45deg, rgb(125, 42, 232), rgb(0, 0, 238))',
+                        color: 'white'
+                      }}>
+                        {index + 1}
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-gray-300">{step}</p>
+                        {index < details.workflow.length - 1 && (
+                          <div className="w-px h-6 ml-4 mt-2" style={{
+                            background: 'linear-gradient(to bottom, rgb(125, 42, 232), transparent)'
+                          }}></div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  };
+
+  // If viewing a project detail, show that instead of main portfolio
+  const currentProject = projects.find(p => p.id === currentView);
+  if (currentProject) {
+    return <ProjectDetail project={currentProject} />;
+  }
+
+  // Main Portfolio View
   return (
     <div className="min-h-screen" style={{ 
       background: 'linear-gradient(135deg, rgb(2, 0, 36) 0%, rgb(14, 19, 24) 50%, rgb(2, 0, 25) 100%)'
@@ -258,7 +616,6 @@ const Portfolio = () => {
                     alt="Anjali Ingle"
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
-                      // Fallback to placeholder if image fails to load
                       e.target.style.display = 'none';
                       e.target.parentElement.innerHTML = `
                         <div class="text-center">
@@ -423,12 +780,13 @@ const Portfolio = () => {
             {projects.map((project, index) => (
               <div 
                 key={project.id}
-                className="rounded-xl overflow-hidden transition-all duration-1000 transform hover:scale-105 hover:shadow-2xl translate-y-0 opacity-100"
+                className="rounded-xl overflow-hidden transition-all duration-1000 transform hover:scale-105 hover:shadow-2xl translate-y-0 opacity-100 cursor-pointer"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
+                onClick={() => setCurrentView(project.id)}
               >
                 <div className="p-6">
                   <div className="flex items-center gap-4 mb-4">
@@ -453,18 +811,18 @@ const Portfolio = () => {
                     ))}
                   </div>
                   
-                  <div className="flex justify-end items-center">
-                    <div className="flex gap-3">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
-                        title="View Source Code"
-                      >
-                        <Github size={20} />
-                      </a>
-                    </div>
+                  <div className="flex justify-between items-center">
+                    <div className="text-sm text-gray-400 italic">Click to view details</div>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+                      title="View Source Code"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Github size={20} />
+                    </a>
                   </div>
                 </div>
               </div>
