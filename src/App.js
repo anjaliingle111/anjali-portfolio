@@ -116,20 +116,6 @@ const Portfolio = () => {
       ]
     },
     {
-      company: "NORTHEASTERN UNIVERSITY",
-      position: "Office Assistant",
-      location: "Boston, Massachusetts",
-      duration: "Sep 2023 - Sep 2024 (1 year)",
-      logo: "🎓",
-      color: "from-red-500 to-red-600",
-      achievements: [
-        "Managed administrative tasks and data entry for university operations",
-        "Assisted with student services and academic support functions",
-        "Coordinated events and maintained departmental databases",
-        "Provided technical support for various university systems"
-      ]
-    },
-    {
       company: "NEXDIGM",
       position: "Data Analyst",
       location: "Pune, India",
@@ -228,7 +214,7 @@ const Portfolio = () => {
               <div className="flex items-center gap-6 mb-8">
                 <div className="flex items-center gap-2 text-gray-300">
                   <MapPin size={18} style={{ color: 'rgb(253, 191, 5)' }} />
-                  <span>Boston, MA • Chicago, IL</span>
+                  <span>Boston, MA, USA</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-300">
                   <Calendar size={18} style={{ color: 'rgb(253, 191, 5)' }} />
@@ -363,9 +349,9 @@ const Portfolio = () => {
                     🏛️
                   </div>
                   <div>
-                    <h4 className="font-bold text-white">Bachelor of Technology</h4>
-                    <p className="font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Information Technology</p>
-                    <p className="text-gray-300">Savitribai Phule Pune University • Pune, India • 2018-2022</p>
+                    <h4 className="font-bold text-white">Bachelor of Technology in Information Technology</h4>
+                    <p className="font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Savitribai Phule Pune University</p>
+                    <p className="text-gray-300">Pune, India • 2018-2022</p>
                     <p className="text-sm text-gray-400 mt-1">
                       Data Structures, DBMS, AI, Business Intelligence
                     </p>
@@ -575,7 +561,7 @@ const Portfolio = () => {
             >
               <MapPin className="w-8 h-8 mx-auto mb-4" style={{ color: 'rgb(0, 0, 238)' }} />
               <h3 className="font-bold text-white mb-2">Location</h3>
-              <p className="text-gray-300">Boston, MA • Chicago, IL</p>
+              <p className="text-gray-300">Boston, MA, USA</p>
             </div>
           </div>
           
