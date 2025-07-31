@@ -89,26 +89,28 @@ const Portfolio = () => {
   ];
 
   const skills = [
-    { category: "Programming", items: ["🐍 Python", "💾 SQL", "📈 R", "🟨 JavaScript"], icon: "💻" },
-    { category: "Data Engineering", items: ["⚡ Apache Kafka", "🐘 PostgreSQL", "🐳 Docker", "🌀 Apache Airflow"], icon: "🔧" },
-    { category: "Machine Learning", items: ["🔬 scikit-learn", "🧠 TensorFlow", "🤖 BERT", "🚀 MLOps"], icon: "🤖" },
-    { category: "Analytics & BI", items: ["📊 Power BI", "🔷 Tableau", "❄️ Snowflake", "📊 Excel"], icon: "📊" },
-    { category: "Cloud & DevOps", items: ["🔧 GitHub Actions", "♻️ CI/CD", "⚡ FastAPI", "☁️ AWS"], icon: "☁️" }
+    { category: "Programming & Querying", items: ["🐍 Python", "💾 SQL (Advanced)", "📊 R", "💻 PowerShell"], icon: "💻" },
+    { category: "Data Engineering & ETL", items: ["⚡ Databricks", "🔄 DataStage", "🌀 Power Automate", "☁️ Cloud Pipelines"], icon: "🔧" },
+    { category: "Databases & Warehousing", items: ["❄️ Snowflake", "🏛️ Oracle", "📊 Dataverse", "🐘 PostgreSQL"], icon: "🗄️" },
+    { category: "BI & Visualization", items: ["📊 Power BI", "💎 Crystal Reports", "📋 Excel", "🔷 Tableau"], icon: "📈" },
+    { category: "Testing & QA", items: ["🧪 Automated Testing", "✅ Manual Testing", "🐛 JIRA", "⚡ Zephyr"], icon: "🔍" },
+    { category: "Methodologies", items: ["🔄 Agile/Scrum", "🏢 SAFe", "📐 Data Modeling", "🤖 MLOps"], icon: "⚙️" }
   ];
 
   const experience = [
     {
       company: "ENTEGRIS",
-      position: "Data Engineering Intern",
+      position: "Data Analyst",
       location: "Chicago, Illinois",
       duration: "May 2024 - Dec 2024 (8 months)",
       logo: "https://i.postimg.cc/7YyBQq6B/Entegris-Logo.png",
       color: "from-blue-500 to-purple-600",
       achievements: [
-        "Developed complex SQL queries for cross-system analysis and operational reporting",
-        "Built scalable Power BI semantic models and dashboards for business stakeholders",
-        "Maintained data governance frameworks and metadata repositories",
-        "Delivered presentations to enhance BI tool adoption across departments"
+        "Led ETL & data warehousing efforts for semiconductor manufacturing data, ensuring high accuracy for production reporting using SQL and Python",
+        "Developed automated Power BI dashboards for production defect analysis and product reliability, enabling engineers to act on insights swiftly",
+        "Implemented Python-based test automation scripts for backend data validation, reducing manual testing efforts and increasing verification efficiency",
+        "Conducted data quality monitoring and audit processes for semiconductor production data, collaborating with engineering teams to resolve discrepancies",
+        "Optimized data pipelines in manufacturing processes, improving overall data flow and influencing key manufacturing KPIs"
       ]
     },
     {
@@ -119,24 +121,26 @@ const Portfolio = () => {
       logo: "https://i.postimg.cc/xCzkwDC5/nexdigm-og-img.jpg",
       color: "from-green-400 to-emerald-500",
       achievements: [
-        "Designed ETL processes and implemented Data Warehouse solutions using Snowflake",
-        "Created operational and financial reports in Power BI and Tableau",
-        "Performed advanced analytics using Python and R for statistical modeling",
-        "Mapped data flows and ensured compliance across data lifecycles"
+        "Built ETL processes for seamless integration of sales and customer data into central databases, enhancing overall data pipeline efficiency",
+        "Cleansed and transformed marketing campaign data using SQL and Power BI, ensuring high-quality datasets for reporting and analysis",
+        "Designed automated reporting pipelines using Power Automate and Power BI, improving reporting accuracy and reducing manual labor",
+        "Collaborated with marketing and sales teams to define key data metrics and ensure data integrity across multiple sources",
+        "Developed custom Power BI dashboards supporting data-driven decision making for marketing and business teams"
       ]
     },
     {
-      company: "ITCCRAFT",
-      position: "Data Analytics Intern",
+      company: "ITC TECHNOLOGIES",
+      position: "Data Analyst",
       location: "Pune, India",
-      duration: "Jan 2021 - Mar 2021 (3 months)",
+      duration: "Jan 2021 - Dec 2021 (1 year)",
       logo: "https://i.postimg.cc/rwDQDsYw/logoitc-0.jpg",
       color: "from-purple-500 to-pink-500",
       achievements: [
-        "Executed SQL queries for data extraction from transactional databases",
-        "Designed financial reports using advanced Excel techniques",
-        "Conducted data profiling and validation for quality assurance",
-        "Collaborated in Agile teams for evolving analytics requirements"
+        "Conducted extensive data cleaning and validation for customer engagement data, significantly improving data quality for analysis",
+        "Used SQL to generate actionable insights from raw data, providing accurate and timely reporting to stakeholders",
+        "Built custom Power BI dashboards supporting marketing and business teams in making data-driven decisions",
+        "Identified and implemented process optimization improvements in data collection and reporting, leading to more efficient workflows",
+        "Delivered comprehensive data analysis and reporting solutions that enhanced business intelligence capabilities"
       ]
     }
   ];
@@ -635,8 +639,8 @@ const Portfolio = () => {
               </h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 Masters student in Data Analytics Engineering at Northeastern University 
-                with hands-on experience in data engineering, analytics, and ML systems. 
-                I'm passionate about turning complex data into actionable business insights.
+                with specialized experience in ETL development, automated testing, and enterprise BI solutions. 
+                I focus on data quality, process optimization, and building scalable analytics platforms.
               </p>
               
               <div className="flex items-center gap-6 mb-8">
@@ -723,14 +727,14 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="transition-all duration-1000 delay-200 transform translate-y-0 opacity-100">
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                I'm a data enthusiast and Masters student in Data Analytics Engineering 
-                at Northeastern University. I have hands-on experience in data engineering, analytics, 
-                and building ML systems across various domains including healthcare, manufacturing, and fintech.
+                I'm a Masters student in Data Analytics Engineering at Northeastern University with specialized experience 
+                in ETL development, data quality assurance, and enterprise BI solutions. My work spans semiconductor manufacturing, 
+                marketing analytics, and customer engagement data across different industry domains.
               </p>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                My experience spans from internships at enterprise companies like Entegris to personal 
-                projects involving real-time data pipelines, fraud detection systems, and predictive analytics. 
-                I enjoy solving complex data challenges and building scalable solutions.
+                I specialize in building automated data pipelines, developing Power BI dashboards for production insights, 
+                and implementing test automation for data validation. My experience includes working with enterprise tools 
+                like Databricks, Snowflake, and Power Automate to deliver scalable analytics solutions.
               </p>
             </div>
             
