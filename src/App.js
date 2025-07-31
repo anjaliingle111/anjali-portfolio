@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink, Mail, Linkedin, MapPin, Calendar, Award, TrendingUp, Database, BarChart3, Code, Users, Briefcase, GraduationCap, Phone } from 'lucide-react';
+import { Github, Mail, Linkedin, MapPin, Calendar, Award, TrendingUp, Database, BarChart3, Code, Users, Briefcase, GraduationCap, Phone } from 'lucide-react';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -43,7 +43,6 @@ const Portfolio = () => {
       tech: ["Python", "scikit-learn", "Flask", "PostgreSQL", "Docker"],
       image: "🛡️",
       github: "https://github.com/anjaliingle111/fraud-detection-platform",
-      live: "https://fraud-detection-demo.com",
       category: "Machine Learning"
     },
     {
@@ -53,7 +52,6 @@ const Portfolio = () => {
       tech: ["Python", "BERT", "TensorFlow", "NLTK", "scikit-learn"],
       image: "🔍",
       github: "https://github.com/anjaliingle111/Fake-News-Classifier-NLP",
-      live: "https://fake-news-demo.streamlit.app",
       category: "NLP/AI"
     },
     {
@@ -63,7 +61,6 @@ const Portfolio = () => {
       tech: ["Python", "FastAPI", "scikit-learn", "GitHub Actions", "CI/CD", "Render"],
       image: "🏥",
       github: "https://github.com/anjaliingle111/carepath-D",
-      live: "https://carepath-d.onrender.com/docs",
       category: "Healthcare Analytics"
     },
     {
@@ -73,7 +70,6 @@ const Portfolio = () => {
       tech: ["Apache Kafka", "PostgreSQL", "Power BI", "Apache Airflow", "Docker"],
       image: "👥",
       github: "https://github.com/anjaliingle111/enterprise-hr-analytics",
-      live: "https://hr-analytics-dashboard.com",
       category: "Data Engineering"
     },
     {
@@ -83,7 +79,6 @@ const Portfolio = () => {
       tech: ["Apache Kafka", "PostgreSQL", "FastAPI", "scikit-learn", "Docker", "CI/CD"],
       image: "⚙️",
       github: "https://github.com/anjaliingle111/cmp-pad-quality-pipeline",
-      live: "https://cmp-quality-dashboard.com",
       category: "Manufacturing Analytics"
     },
     {
@@ -93,7 +88,6 @@ const Portfolio = () => {
       tech: ["Python", "Mistral AI", "FastAPI", "PostgreSQL", "React"],
       image: "🩺",
       github: "https://github.com/anjaliingle111/EHR-system-using-mistral",
-      live: "https://ehr-mistral-demo.com",
       category: "Healthcare AI"
     }
   ];
@@ -223,11 +217,11 @@ const Portfolio = () => {
                 </span>
               </h1>
               <h2 className="text-2xl md:text-3xl mb-6" style={{ color: 'rgb(253, 191, 5)' }}>
-                Data Analytics Engineer
+                Masters Student in Data Analytics Engineering
               </h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Currently pursuing my Masters in Data Analytics Engineering at Northeastern University 
-                while gaining hands-on experience in data engineering, analytics, and ML systems. 
+                Masters student in Data Analytics Engineering at Northeastern University 
+                with hands-on experience in data engineering, analytics, and ML systems. 
                 I'm passionate about turning complex data into actionable business insights.
               </p>
               
@@ -274,28 +268,21 @@ const Portfolio = () => {
                   }}
                 >
                   <img 
-                    src="https://i.imgur.com/rts3PRx.png"
+                    src="https://i.postimg.cc/Nf7ydSkR/picture.jpg"
                     alt="Anjali Ingle"
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
-                      // Try different formats if the first one fails
-                      if (e.target.src.includes('.png')) {
-                        e.target.src = "https://i.imgur.com/rts3PRx.jpg";
-                      } else if (e.target.src.includes('.jpg')) {
-                        e.target.src = "https://imgur.com/rts3PRx.jpg";
-                      } else {
-                        // Fallback to a placeholder
-                        e.target.style.display = 'none';
-                        e.target.parentElement.innerHTML = `
-                          <div class="text-center">
-                            <div style="background: linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))" class="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-4">
-                              <div class="text-4xl">👩‍💻</div>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">Data Analytics</h3>
-                            <p class="text-gray-300">Engineering Student</p>
+                      // Fallback to placeholder if image fails to load
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `
+                        <div class="text-center">
+                          <div style="background: linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))" class="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="text-4xl">👩‍💻</div>
                           </div>
-                        `;
-                      }
+                          <h3 class="text-xl font-bold text-white">Data Analytics</h3>
+                          <p class="text-gray-300">Engineering Student</p>
+                        </div>
+                      `;
                     }}
                   />
                 </div>
@@ -323,7 +310,7 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="transition-all duration-1000 delay-200 transform translate-y-0 opacity-100">
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                I'm a data enthusiast currently completing my Masters in Data Analytics Engineering 
+                I'm a data enthusiast and Masters student in Data Analytics Engineering 
                 at Northeastern University. I have hands-on experience in data engineering, analytics, 
                 and building ML systems across various domains including healthcare, manufacturing, and fintech.
               </p>
@@ -378,7 +365,7 @@ const Portfolio = () => {
                   <div>
                     <h4 className="font-bold text-white">Bachelor of Technology</h4>
                     <p className="font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Information Technology</p>
-                    <p className="text-gray-300">Savitribai Phule Pune University • India</p>
+                    <p className="text-gray-300">Savitribai Phule Pune University • Pune, India • 2018-2022</p>
                     <p className="text-sm text-gray-400 mt-1">
                       Data Structures, DBMS, AI, Business Intelligence
                     </p>
@@ -487,16 +474,9 @@ const Portfolio = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+                        title="View Source Code"
                       >
                         <Github size={20} />
-                      </a>
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
-                      >
-                        <ExternalLink size={20} />
                       </a>
                     </div>
                   </div>
@@ -612,7 +592,7 @@ const Portfolio = () => {
               Send Email
             </a>
             <a
-              href="https://linkedin.com/in/anjaliingle111"
+              href="https://www.linkedin.com/in/anjali-ingle-7749671a1"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:bg-opacity-10 inline-flex items-center gap-2"
