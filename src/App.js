@@ -1,0 +1,648 @@
+import React, { useState, useEffect } from 'react';
+import { Github, ExternalLink, Mail, Linkedin, MapPin, Calendar, Award, TrendingUp, Database, BarChart3, Code, Users, Briefcase, GraduationCap, Phone } from 'lucide-react';
+
+const Portfolio = () => {
+  const [activeSection, setActiveSection] = useState('home');
+  const [isVisible, setIsVisible] = useState({
+    home: true,
+    about: true,
+    experience: true,
+    projects: true,
+    skills: true,
+    contact: true
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const projects = [
+    {
+      id: 1,
+      title: "Enterprise Fraud Detection Platform",
+      description: "Built a production-ready fraud detection system analyzing 50+ risk factors with 79.86% AUC performance. Implemented real-time processing, GDPR compliance, and comprehensive ROI analysis for financial institutions.",
+      tech: ["Python", "scikit-learn", "Flask", "PostgreSQL", "Docker"],
+      image: "🛡️",
+      github: "https://github.com/anjaliingle111/fraud-detection-platform",
+      live: "https://fraud-detection-demo.com",
+      category: "Machine Learning"
+    },
+    {
+      id: 2,
+      title: "Fake News Detection with BERT",
+      description: "Advanced NLP system using BERT transformers and ensemble methods for fake news classification. Achieved 67.8% accuracy with comprehensive feature engineering including sentiment analysis and readability scores.",
+      tech: ["Python", "BERT", "TensorFlow", "NLTK", "scikit-learn"],
+      image: "🔍",
+      github: "https://github.com/anjaliingle111/Fake-News-Classifier-NLP",
+      live: "https://fake-news-demo.streamlit.app",
+      category: "NLP/AI"
+    },
+    {
+      id: 3,
+      title: "CarePath-D: Diabetes Readmission Predictor",
+      description: "MLOps pipeline predicting hospital readmissions for diabetic patients. Features FastAPI deployment, automated CI/CD with GitHub Actions, and production monitoring with 85% accuracy on clinical data.",
+      tech: ["Python", "FastAPI", "scikit-learn", "GitHub Actions", "CI/CD", "Render"],
+      image: "🏥",
+      github: "https://github.com/anjaliingle111/carepath-D",
+      live: "https://carepath-d.onrender.com/docs",
+      category: "Healthcare Analytics"
+    },
+    {
+      id: 4,
+      title: "Enterprise HR Analytics Platform",
+      description: "Real-time data engineering platform processing 1,000+ employee records using Apache Kafka and PostgreSQL. Integrated with Power BI for executive dashboards managing $138M+ payroll operations.",
+      tech: ["Apache Kafka", "PostgreSQL", "Power BI", "Apache Airflow", "Docker"],
+      image: "👥",
+      github: "https://github.com/anjaliingle111/enterprise-hr-analytics",
+      live: "https://hr-analytics-dashboard.com",
+      category: "Data Engineering"
+    },
+    {
+      id: 5,
+      title: "Manufacturing Quality Pipeline",
+      description: "Real-time quality prediction system for CMP manufacturing processes. Implemented Kafka streaming, ETL pipelines, ML models with CI/CD automation achieving 88.2% accuracy for production optimization.",
+      tech: ["Apache Kafka", "PostgreSQL", "FastAPI", "scikit-learn", "Docker", "CI/CD"],
+      image: "⚙️",
+      github: "https://github.com/anjaliingle111/cmp-pad-quality-pipeline",
+      live: "https://cmp-quality-dashboard.com",
+      category: "Manufacturing Analytics"
+    },
+    {
+      id: 6,
+      title: "EHR System with Mistral AI",
+      description: "Intelligent Electronic Health Record system leveraging Mistral AI for medical record processing and clinical decision support with advanced natural language processing capabilities.",
+      tech: ["Python", "Mistral AI", "FastAPI", "PostgreSQL", "React"],
+      image: "🩺",
+      github: "https://github.com/anjaliingle111/EHR-system-using-mistral",
+      live: "https://ehr-mistral-demo.com",
+      category: "Healthcare AI"
+    }
+  ];
+
+  const skills = [
+    { category: "Programming", items: ["🐍 Python", "💾 SQL", "📈 R", "🟨 JavaScript"], icon: "💻" },
+    { category: "Data Engineering", items: ["⚡ Apache Kafka", "🐘 PostgreSQL", "🐳 Docker", "🌀 Apache Airflow"], icon: "🔧" },
+    { category: "Machine Learning", items: ["🔬 scikit-learn", "🧠 TensorFlow", "🤖 BERT", "🚀 MLOps"], icon: "🤖" },
+    { category: "Analytics & BI", items: ["📊 Power BI", "🔷 Tableau", "❄️ Snowflake", "📊 Excel"], icon: "📊" },
+    { category: "Cloud & DevOps", items: ["🔧 GitHub Actions", "♻️ CI/CD", "⚡ FastAPI", "☁️ AWS"], icon: "☁️" }
+  ];
+
+  const experience = [
+    {
+      company: "ENTEGRIS",
+      position: "Data Engineering Intern",
+      location: "Chicago, Illinois",
+      duration: "May 2024 - Dec 2024 (8 months)",
+      logo: "🔬",
+      color: "from-blue-500 to-purple-600",
+      achievements: [
+        "Developed complex SQL queries for cross-system analysis and operational reporting",
+        "Built scalable Power BI semantic models and dashboards for business stakeholders",
+        "Maintained data governance frameworks and metadata repositories",
+        "Delivered presentations to enhance BI tool adoption across departments"
+      ]
+    },
+    {
+      company: "NORTHEASTERN UNIVERSITY",
+      position: "Office Assistant",
+      location: "Boston, Massachusetts",
+      duration: "Sep 2023 - Sep 2024 (1 year)",
+      logo: "🎓",
+      color: "from-red-500 to-red-600",
+      achievements: [
+        "Managed administrative tasks and data entry for university operations",
+        "Assisted with student services and academic support functions",
+        "Coordinated events and maintained departmental databases",
+        "Provided technical support for various university systems"
+      ]
+    },
+    {
+      company: "NEXDIGM",
+      position: "Data Analyst",
+      location: "Pune, India",
+      duration: "Jan 2022 - July 2023 (1.5 years)",
+      logo: "📊",
+      color: "from-green-400 to-emerald-500",
+      achievements: [
+        "Designed ETL processes and implemented Data Warehouse solutions using Snowflake",
+        "Created operational and financial reports in Power BI and Tableau",
+        "Performed advanced analytics using Python and R for statistical modeling",
+        "Mapped data flows and ensured compliance across data lifecycles"
+      ]
+    },
+    {
+      company: "ITCCRAFT",
+      position: "Data Analytics Intern",
+      location: "Pune, India",
+      duration: "Jan 2021 - Mar 2021 (3 months)",
+      logo: "💼",
+      color: "from-purple-500 to-pink-500",
+      achievements: [
+        "Executed SQL queries for data extraction from transactional databases",
+        "Designed financial reports using advanced Excel techniques",
+        "Conducted data profiling and validation for quality assurance",
+        "Collaborated in Agile teams for evolving analytics requirements"
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen" style={{ 
+      background: 'linear-gradient(135deg, rgb(2, 0, 36) 0%, rgb(14, 19, 24) 50%, rgb(2, 0, 25) 100%)'
+    }}>
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 transition-all duration-500" style={{
+        backgroundColor: 'rgba(14, 19, 24, 0.95)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+      }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex justify-between items-center py-4">
+            <div className="text-2xl font-bold text-white">
+              Anjali <span style={{ color: 'rgb(253, 191, 5)' }}>Ingle</span>
+            </div>
+            <div className="hidden md:flex space-x-8">
+              {['home', 'about', 'experience', 'projects', 'skills', 'contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className={`text-white hover:text-yellow-400 transition-all duration-300 capitalize font-medium relative ${
+                    activeSection === item ? 'text-yellow-400' : ''
+                  }`}
+                  style={{ 
+                    color: activeSection === item ? 'rgb(253, 191, 5)' : 'rgb(255, 255, 255)'
+                  }}
+                >
+                  {item}
+                  {activeSection === item && (
+                    <div 
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full transition-all duration-300"
+                      style={{ backgroundColor: 'rgb(253, 191, 5)' }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen flex items-center pt-20 pb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="transition-all duration-1000 transform translate-y-0 opacity-100">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Hi, I'm{' '}
+                <span 
+                  className="bg-gradient-to-r bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))'
+                  }}
+                >
+                  Anjali Ingle
+                </span>
+              </h1>
+              <h2 className="text-2xl md:text-3xl mb-6" style={{ color: 'rgb(253, 191, 5)' }}>
+                Data Analytics Engineer
+              </h2>
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                Currently pursuing my Masters in Data Analytics Engineering at Northeastern University 
+                while gaining hands-on experience in data engineering, analytics, and ML systems. 
+                I'm passionate about turning complex data into actionable business insights.
+              </p>
+              
+              <div className="flex items-center gap-6 mb-8">
+                <div className="flex items-center gap-2 text-gray-300">
+                  <MapPin size={18} style={{ color: 'rgb(253, 191, 5)' }} />
+                  <span>Boston, MA • Chicago, IL</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-300">
+                  <Calendar size={18} style={{ color: 'rgb(253, 191, 5)' }} />
+                  <span>Open to opportunities</span>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <button 
+                  onClick={() => scrollToSection('projects')}
+                  className="px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  style={{
+                    background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))',
+                    color: 'rgb(0, 0, 0)'
+                  }}
+                >
+                  View My Work
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="border-2 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:bg-opacity-10"
+                  style={{ borderColor: 'rgb(253, 191, 5)', color: 'rgb(253, 191, 5)' }}
+                >
+                  Get In Touch
+                </button>
+              </div>
+            </div>
+            
+            <div className="flex justify-center transition-all duration-1000 delay-300 transform translate-y-0 opacity-100">
+              <div className="relative">
+                <div 
+                  className="w-80 h-80 rounded-full flex items-center justify-center relative overflow-hidden"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(253, 191, 5, 0.2), rgba(125, 42, 232, 0.2))',
+                    backdropFilter: 'blur(10px)',
+                    border: '3px solid rgba(253, 191, 5, 0.5)'
+                  }}
+                >
+                  <img 
+                    src="https://i.imgur.com/rts3PRx.png"
+                    alt="Anjali Ingle"
+                    className="w-full h-full object-cover rounded-full"
+                    onError={(e) => {
+                      // Try different formats if the first one fails
+                      if (e.target.src.includes('.png')) {
+                        e.target.src = "https://i.imgur.com/rts3PRx.jpg";
+                      } else if (e.target.src.includes('.jpg')) {
+                        e.target.src = "https://imgur.com/rts3PRx.jpg";
+                      } else {
+                        // Fallback to a placeholder
+                        e.target.style.display = 'none';
+                        e.target.parentElement.innerHTML = `
+                          <div class="text-center">
+                            <div style="background: linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))" class="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-4">
+                              <div class="text-4xl">👩‍💻</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Data Analytics</h3>
+                            <p class="text-gray-300">Engineering Student</p>
+                          </div>
+                        `;
+                      }
+                    }}
+                  />
+                </div>
+                <div 
+                  className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full flex items-center justify-center"
+                  style={{
+                    background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))'
+                  }}
+                >
+                  <div className="text-2xl">📊</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+            About <span style={{ color: 'rgb(253, 191, 5)' }}>Me</span>
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="transition-all duration-1000 delay-200 transform translate-y-0 opacity-100">
+              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                I'm a data enthusiast currently completing my Masters in Data Analytics Engineering 
+                at Northeastern University. I have hands-on experience in data engineering, analytics, 
+                and building ML systems across various domains including healthcare, manufacturing, and fintech.
+              </p>
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                My experience spans from internships at enterprise companies like Entegris to personal 
+                projects involving real-time data pipelines, fraud detection systems, and predictive analytics. 
+                I enjoy solving complex data challenges and building scalable solutions.
+              </p>
+            </div>
+            
+            <div className="transition-all duration-1000 delay-400 transform translate-y-0 opacity-100">
+              <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
+              <div className="space-y-6">
+                <div 
+                  className="flex items-start gap-4 p-6 rounded-xl transition-all duration-300 hover:scale-105"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <div 
+                    className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl"
+                    style={{ background: 'linear-gradient(45deg, rgb(125, 42, 232), rgb(0, 0, 238))' }}
+                  >
+                    🐾
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">Masters in Data Analytics Engineering</h4>
+                    <p className="font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Northeastern University</p>
+                    <p className="text-gray-300">Boston, MA • 2023-2025</p>
+                    <p className="text-sm text-gray-400 mt-1">
+                      Data Management, Machine Learning, Computational Visualization
+                    </p>
+                  </div>
+                </div>
+                
+                <div 
+                  className="flex items-start gap-4 p-6 rounded-xl transition-all duration-300 hover:scale-105"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <div 
+                    className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl"
+                    style={{ background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))' }}
+                  >
+                    🏛️
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">Bachelor of Technology</h4>
+                    <p className="font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Information Technology</p>
+                    <p className="text-gray-300">Savitribai Phule Pune University • India</p>
+                    <p className="text-sm text-gray-400 mt-1">
+                      Data Structures, DBMS, AI, Business Intelligence
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+            Professional <span style={{ color: 'rgb(253, 191, 5)' }}>Experience</span>
+          </h2>
+          
+          <div className="space-y-8">
+            {experience.map((job, index) => (
+              <div 
+                key={index}
+                className="p-8 rounded-xl transition-all duration-1000 transform hover:scale-105 translate-y-0 opacity-100"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                <div className="flex items-start gap-6">
+                  <div 
+                    className={`w-16 h-16 rounded-lg flex items-center justify-center text-white font-bold text-2xl bg-gradient-to-r ${job.color}`}
+                  >
+                    {job.logo}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">{job.position}</h3>
+                        <p className="text-xl font-medium" style={{ color: 'rgb(253, 191, 5)' }}>{job.company}</p>
+                        <p className="text-gray-300">{job.location}</p>
+                      </div>
+                      <div className="text-gray-400 font-medium">{job.duration}</div>
+                    </div>
+                    <ul className="space-y-2">
+                      {job.achievements.map((achievement, i) => (
+                        <li key={i} className="text-gray-300 flex items-start gap-2">
+                          <span style={{ color: 'rgb(253, 191, 5)' }} className="mt-2">•</span>
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+            Featured <span style={{ color: 'rgb(253, 191, 5)' }}>Projects</span>
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div 
+                key={project.id}
+                className="rounded-xl overflow-hidden transition-all duration-1000 transform hover:scale-105 hover:shadow-2xl translate-y-0 opacity-100"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                <div className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-4xl">{project.image}</div>
+                    <div>
+                      <div className="text-sm font-medium" style={{ color: 'rgb(253, 191, 5)' }}>{project.category}</div>
+                      <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((tech) => (
+                      <span 
+                        key={tech} 
+                        className="px-3 py-1 rounded-full text-sm font-medium text-black"
+                        style={{ backgroundColor: 'rgb(253, 191, 5)' }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="flex justify-end items-center">
+                    <div className="flex gap-3">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+                      >
+                        <Github size={20} />
+                      </a>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+            Technical <span style={{ color: 'rgb(253, 191, 5)' }}>Skills</span>
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skills.map((skillGroup, index) => (
+              <div 
+                key={index}
+                className="p-6 rounded-xl transition-all duration-1000 transform hover:scale-105 translate-y-0 opacity-100"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">{skillGroup.icon}</span>
+                  <h3 className="text-xl font-bold text-white">{skillGroup.category}</h3>
+                </div>
+                <div className="space-y-2">
+                  {skillGroup.items.map((skill) => (
+                    <div 
+                      key={skill} 
+                      className="px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 hover:scale-105"
+                      style={{
+                        background: 'rgba(253, 191, 5, 0.2)',
+                        border: '1px solid rgba(253, 191, 5, 0.3)'
+                      }}
+                    >
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 transition-all duration-1000 transform translate-y-0 opacity-100">
+            Let's <span style={{ color: 'rgb(253, 191, 5)' }}>Connect</span>
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto transition-all duration-1000 delay-200 transform translate-y-0 opacity-100">
+            I'm always interested in discussing data engineering opportunities, 
+            ML projects, or potential collaborations. Let's build something amazing together!
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12 transition-all duration-1000 delay-400 transform translate-y-0 opacity-100">
+            <div 
+              className="p-6 rounded-xl transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}
+            >
+              <Mail className="w-8 h-8 mx-auto mb-4" style={{ color: 'rgb(253, 191, 5)' }} />
+              <h3 className="font-bold text-white mb-2">Email</h3>
+              <p className="text-gray-300">ingle.a@northeastern.edu</p>
+            </div>
+            <div 
+              className="p-6 rounded-xl transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}
+            >
+              <Phone className="w-8 h-8 mx-auto mb-4" style={{ color: 'rgb(125, 42, 232)' }} />
+              <h3 className="font-bold text-white mb-2">Phone</h3>
+              <p className="text-gray-300">(617) 372-0345</p>
+            </div>
+            <div 
+              className="p-6 rounded-xl transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}
+            >
+              <MapPin className="w-8 h-8 mx-auto mb-4" style={{ color: 'rgb(0, 0, 238)' }} />
+              <h3 className="font-bold text-white mb-2">Location</h3>
+              <p className="text-gray-300">Boston, MA • Chicago, IL</p>
+            </div>
+          </div>
+          
+          <div className="flex justify-center gap-6 transition-all duration-1000 delay-600 transform translate-y-0 opacity-100">
+            <a
+              href="mailto:ingle.a@northeastern.edu"
+              className="px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2"
+              style={{
+                background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))',
+                color: 'rgb(0, 0, 0)'
+              }}
+            >
+              <Mail size={20} />
+              Send Email
+            </a>
+            <a
+              href="https://linkedin.com/in/anjaliingle111"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:bg-opacity-10 inline-flex items-center gap-2"
+              style={{ borderColor: 'rgb(253, 191, 5)', color: 'rgb(253, 191, 5)' }}
+            >
+              <Linkedin size={20} />
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/anjaliingle111"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:bg-opacity-10 inline-flex items-center gap-2"
+              style={{ borderColor: 'rgba(255, 255, 255, 0.3)' }}
+            >
+              <Github size={20} />
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+        <div className="max-w-6xl mx-auto px-6 text-center text-gray-400">
+          <p>&copy; 2025 Anjali Ingle. Data Analytics Engineer specializing in enterprise solutions.</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Portfolio;
