@@ -102,7 +102,7 @@ const Portfolio = () => {
       position: "Data Engineering Intern",
       location: "Chicago, Illinois",
       duration: "May 2024 - Dec 2024 (8 months)",
-      logo: "🔬",
+      logo: "https://i.postimg.cc/7YyBQq6B/Entegris-Logo.png",
       color: "from-blue-500 to-purple-600",
       achievements: [
         "Developed complex SQL queries for cross-system analysis and operational reporting",
@@ -116,7 +116,7 @@ const Portfolio = () => {
       position: "Data Analyst",
       location: "Pune, India",
       duration: "Jan 2022 - July 2023 (1.5 years)",
-      logo: "📊",
+      logo: "https://i.postimg.cc/xCzkwDC5/nexdigm-og-img.jpg",
       color: "from-green-400 to-emerald-500",
       achievements: [
         "Designed ETL processes and implemented Data Warehouse solutions using Snowflake",
@@ -130,7 +130,7 @@ const Portfolio = () => {
       position: "Data Analytics Intern",
       location: "Pune, India",
       duration: "Jan 2021 - Mar 2021 (3 months)",
-      logo: "💼",
+      logo: "https://i.postimg.cc/rwDQDsYw/logoitc-0.jpg",
       color: "from-purple-500 to-pink-500",
       achievements: [
         "Executed SQL queries for data extraction from transactional databases",
@@ -335,9 +335,9 @@ const Portfolio = () => {
           { icon: 'https://i.postimg.cc/DzwKXvhp/Python-logo.png', tool: 'Python', name: 'Data Ingestion' },
           { icon: 'https://i.postimg.cc/gcR1rXRk/Postgresql-elephant-svg.png', tool: 'PostgreSQL', name: 'Feature Engineering' },
           { icon: 'https://i.postimg.cc/jSj86LWf/17349883.png', tool: 'scikit-learn', name: 'ML Pipeline' },
-          { icon: 'https://i.postimg.cc/Y9BfP9Sb/fastapi-ggmxtn5w3qqwks1i5jnx2p.webp', tool: 'FastAPI', name: 'API Gateway' },
-          { icon: 'https://i.postimg.cc/DzwKXvhp/Python-logo.png', tool: 'Python', name: 'Compliance Module' },
-          { icon: 'https://i.postimg.cc/BZcNdxHD/Power-BI-Logo.png', tool: 'Power BI', name: 'Dashboard' }
+          { icon: 'https://i.postimg.cc/Y9BfP9Sb/fastapi-ggmxtn5w3qqwks1i5jnx2p.webp', tool: 'Flask API', name: 'REST API' },
+          { icon: 'https://i.postimg.cc/DzwKXvhp/Python-logo.png', tool: 'Python', name: 'Compliance' },
+          { icon: 'https://i.postimg.cc/jjmkStS7/free-docker-3628734-3029959.webp', tool: 'Docker', name: 'Deployment' }
         ],
         'fake-news-bert': [
           { icon: 'https://i.postimg.cc/DzwKXvhp/Python-logo.png', tool: 'Python', name: 'Text Preprocessing' },
@@ -746,10 +746,14 @@ const Portfolio = () => {
                   }}
                 >
                   <div 
-                    className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl"
-                    style={{ background: 'linear-gradient(45deg, rgb(125, 42, 232), rgb(0, 0, 238))' }}
+                    className="w-12 h-12 rounded-lg flex items-center justify-center p-1"
+                    style={{ background: 'rgba(255, 255, 255, 0.9)' }}
                   >
-                    🐾
+                    <img 
+                      src="https://i.postimg.cc/SKCtRH21/NU-RGB-seal-R.png"
+                      alt="Northeastern University"
+                      className="w-10 h-10 object-contain"
+                    />
                   </div>
                   <div>
                     <h4 className="font-bold text-white">Masters in Data Analytics Engineering</h4>
@@ -770,10 +774,14 @@ const Portfolio = () => {
                   }}
                 >
                   <div 
-                    className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl"
-                    style={{ background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))' }}
+                    className="w-12 h-12 rounded-lg flex items-center justify-center p-1"
+                    style={{ background: 'rgba(255, 255, 255, 0.9)' }}
                   >
-                    🏛️
+                    <img 
+                      src="https://i.postimg.cc/htrkcfwZ/Vishwakarma-Institute-of-Technology.png"
+                      alt="SPPU"
+                      className="w-10 h-10 object-contain"
+                    />
                   </div>
                   <div>
                     <h4 className="font-bold text-white">Bachelor of Technology in Information Technology</h4>
@@ -810,9 +818,17 @@ const Portfolio = () => {
               >
                 <div className="flex items-start gap-6">
                   <div 
-                    className={`w-16 h-16 rounded-lg flex items-center justify-center text-white font-bold text-2xl bg-gradient-to-r ${job.color}`}
+                    className={`w-16 h-16 rounded-lg flex items-center justify-center p-2 bg-gradient-to-r ${job.color}`}
                   >
-                    {job.logo}
+                    {job.logo.startsWith('http') ? (
+                      <img 
+                        src={job.logo} 
+                        alt={job.company}
+                        className="w-12 h-12 object-contain"
+                      />
+                    ) : (
+                      <div className="text-white font-bold text-2xl">{job.logo}</div>
+                    )}
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-start mb-4">
@@ -930,6 +946,7 @@ const Portfolio = () => {
                 <p className="text-gray-300 mb-6 leading-relaxed">
                   Comprehensive Power BI dashboard analyzing 1,000+ employee workforce across 5 departments. 
                   Features executive KPIs, performance analytics, and workforce insights managing $138M+ in total compensation.
+                  This multi-page dashboard demonstrates advanced Power BI development and data modeling skills.
                 </p>
                 
                 {/* Dashboard Preview */}
@@ -965,13 +982,13 @@ const Portfolio = () => {
                 
                 <div className="flex gap-4">
                   <button className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all hover:scale-105">
-                    View Interactive Dashboard
+                    View Dashboard Screenshots
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Tableau Dashboard Placeholder */}
+            {/* Tableau Dashboard - To Be Developed */}
             <div 
               className="rounded-xl overflow-hidden transition-all duration-300 hover:scale-105"
               style={{
@@ -985,36 +1002,24 @@ const Portfolio = () => {
                   <div className="text-4xl">📈</div>
                   <div>
                     <div className="text-sm font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Tableau Dashboard</div>
-                    <h3 className="text-2xl font-bold text-white">Financial Performance Analytics</h3>
+                    <h3 className="text-2xl font-bold text-white">Financial Analytics Dashboard</h3>
                   </div>
                 </div>
                 
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Interactive Tableau dashboard focusing on financial performance metrics, revenue analysis, 
-                  and business intelligence insights with advanced data visualization techniques.
+                  Interactive Tableau dashboard for financial performance analytics, featuring advanced data 
+                  visualization techniques for business intelligence and strategic decision-making.
                 </p>
                 
-                {/* Dashboard Preview */}
-                <div className="bg-gray-800 rounded-lg p-4 mb-6">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-20 h-3 bg-gradient-to-r from-orange-400 to-orange-600 rounded"></div>
-                      <span className="text-gray-300 text-sm">Revenue Trends</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-16 h-3 bg-gradient-to-r from-teal-400 to-teal-600 rounded"></div>
-                      <span className="text-gray-300 text-sm">Profit Margins</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-24 h-3 bg-gradient-to-r from-pink-400 to-pink-600 rounded"></div>
-                      <span className="text-gray-300 text-sm">Market Share</span>
-                    </div>
-                  </div>
-                  <div className="text-center text-gray-400 text-sm mt-4">Dashboard Preview</div>
+                {/* Coming Soon Preview */}
+                <div className="bg-gray-800 rounded-lg p-6 mb-6 text-center">
+                  <div className="text-6xl mb-4">🚧</div>
+                  <div className="text-gray-300 font-medium">Tableau Dashboard</div>
+                  <div className="text-gray-400 text-sm">In Development</div>
                 </div>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['Tableau', 'Advanced Analytics', 'Data Visualization', 'Business Intelligence'].map((tech) => (
+                  {['Tableau Public', 'Advanced Analytics', 'Interactive Viz', 'Business Intelligence'].map((tech) => (
                     <span 
                       key={tech} 
                       className="px-3 py-1 rounded-full text-sm font-medium text-black"
@@ -1027,7 +1032,7 @@ const Portfolio = () => {
                 
                 <div className="flex gap-4">
                   <button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-all hover:scale-105">
-                    Coming Soon
+                    Coming Soon - Tableau Public
                   </button>
                 </div>
               </div>
