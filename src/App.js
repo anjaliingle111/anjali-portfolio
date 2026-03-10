@@ -1,9 +1,9 @@
 // App.js - Main Portfolio with Routing
 import React, { useState, useEffect } from 'react';
-import { Github, Mail, Linkedin, MapPin, Calendar, Award, TrendingUp, Database, BarChart3, Code, Users, Briefcase, GraduationCap, Phone, ArrowLeft, ExternalLink } from 'lucide-react';
+import { Github, Mail, Linkedin, MapPin, Calendar, Database, BarChart3, Phone, ArrowLeft } from 'lucide-react';
 
 const Portfolio = () => {
-  const [currentView, setCurrentView] = useState('home'); // 'home' or project id
+  const [currentView, setCurrentView] = useState('home');
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const Portfolio = () => {
   ];
 
   const skills = [
-    { category: "Programming & Querying", items: ["🐍 Python", "💾 SQL (Advanced)", "📊 R", "💻 PowerShell"], icon: "💻" },
+    { category: "Power Platform & AI", items: ["⚡ Power Apps", "🔄 Power Automate", "🤖 Copilot Studio", "🧠 Azure AI Foundry"], icon: "🔷" },
     { category: "Data Engineering & ETL", items: ["⚡ Databricks", "🔄 DataStage", "🌀 Power Automate", "☁️ Cloud Pipelines"], icon: "🔧" },
     { category: "Databases & Warehousing", items: ["❄️ Snowflake", "🏛️ Oracle", "📊 Dataverse", "🐘 PostgreSQL"], icon: "🗄️" },
     { category: "BI & Visualization", items: ["📊 Power BI", "💎 Crystal Reports", "📋 Excel", "🔷 Tableau"], icon: "📈" },
@@ -106,12 +106,9 @@ const Portfolio = () => {
       logo: "https://i.postimg.cc/7YyBQq6B/Entegris-Logo.png",
       color: "from-blue-500 to-purple-600",
       achievements: [
-          "Developed Power Apps Model-driven applications and Power Automate workflows integrated with Dataverse and SQL 
-          databases processing 1000+ monthly records using Agile methodologies." 
-          "Implemented integration patterns with REST APIs, JSON, and XML for SAP connectivity, conducting code reviews to 
-           confirm adherence to best practices."
-          "Managed environment management using Azure DevOps and CoE toolkit, confirming solutions align with compliance, 
-            governance, and risk management requirements ensuring data handling security."
+        "Developed Power Apps Model-driven applications and Power Automate workflows integrated with Dataverse and SQL databases processing 1000+ monthly records using Agile methodologies.",
+        "Implemented integration patterns with REST APIs, JSON, and XML for SAP connectivity, conducting code reviews to confirm adherence to best practices.",
+        "Managed environment management using Azure DevOps and CoE toolkit, confirming solutions align with compliance, governance, and risk management requirements ensuring data handling security."
       ]
     },
     {
@@ -122,33 +119,27 @@ const Portfolio = () => {
       logo: "https://i.postimg.cc/xCzkwDC5/nexdigm-og-img.jpg",
       color: "from-green-400 to-emerald-500",
       achievements: [
-    "Built Power Apps Canvas applications and Power Automate workflows using Copilot technologies across 12 APAC markets, 
-    integrating REST APIs for CRM connectivity."
-    "Developed Power BI reports and M365 agent solutions for document search and reporting scenarios, providing regular 
-     updates on project status and outcomes." 
-    "Collaborated cross-functionally guiding teams on technical standards and solution architecture, supporting enablement and 
-      training sessions promoting safe citizen development practices."
+        "Built Power Apps Canvas applications and Power Automate workflows using Copilot technologies across 12 APAC markets, integrating REST APIs for CRM connectivity.",
+        "Developed Power BI reports and M365 agent solutions for document search and reporting scenarios, providing regular updates on project status and outcomes.",
+        "Collaborated cross-functionally guiding teams on technical standards and solution architecture, supporting enablement and training sessions promoting safe citizen development practices."
       ]
     },
     {
       company: "IST Management",
       position: "Operations Analyst",
-      location: "Boston, India",
+      location: "Boston, MA",
       duration: "Jan 2025 - Dec 2025 (1 year)",
-      logo: "data:image/jpeg;base64,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",
+      logo: "https://i.postimg.cc/7YyBQq6B/Entegris-Logo.png",
       color: "from-purple-500 to-pink-500",
       achievements: [
-        "Designed and implemented agentic AI solutions using Copilot Studio and Azure AI Foundry, developing Power Apps (Canvas 
-        and Model-driven) and Power Automate workflows."
-        "Architected applications with Dataverse and AI Builder processing 50K+ daily records, implementing environment 
-        management, CoE toolkit, and tenant-level security controls for governance."
-        "Engaged with stakeholders to gather requirements translating them into technical specifications, monitoring application 
-        performance optimizing for speed, scalability, and user experience." 
+        "Designed and implemented agentic AI solutions using Copilot Studio and Azure AI Foundry, developing Power Apps (Canvas and Model-driven) and Power Automate workflows.",
+        "Architected applications with Dataverse and AI Builder processing 50K+ daily records, implementing environment management, CoE toolkit, and tenant-level security controls for governance.",
+        "Engaged with stakeholders to gather requirements translating them into technical specifications, monitoring application performance optimizing for speed, scalability, and user experience."
       ]
     }
   ];
 
-  // Project Detail Components
+  // Project Detail Component
   const ProjectDetail = ({ project }) => {
     const getProjectDetails = (projectId) => {
       switch (projectId) {
@@ -180,7 +171,6 @@ const Portfolio = () => {
               "Comprehensive audit trails"
             ]
           };
-        
         case 'fake-news-bert':
           return {
             overview: "Advanced NLP system combining BERT transformers with traditional ML approaches for fake news detection. Implements comprehensive feature engineering including sentiment analysis, readability scores, and ensemble methods.",
@@ -209,7 +199,6 @@ const Portfolio = () => {
               "Explainability through feature importance"
             ]
           };
-        
         case 'carepath-d':
           return {
             overview: "MLOps pipeline for predicting hospital readmissions among diabetic patients using clinical data. Features production deployment with automated CI/CD, monitoring, and FastAPI integration.",
@@ -238,7 +227,6 @@ const Portfolio = () => {
               "Healthcare-compliant data processing"
             ]
           };
-        
         case 'hr-analytics':
           return {
             overview: "Enterprise-grade HR analytics platform processing real-time employee data for 1,000+ employees across 5 departments. Features Lambda architecture with streaming analytics and Power BI integration.",
@@ -267,7 +255,6 @@ const Portfolio = () => {
               "Docker containerized microservices architecture"
             ]
           };
-        
         case 'manufacturing-quality':
           return {
             overview: "Real-time manufacturing quality prediction system for CMP (Chemical Mechanical Planarization) processes. Integrates streaming sensor data with ML models for proactive quality control.",
@@ -296,7 +283,6 @@ const Portfolio = () => {
               "Integration with existing manufacturing systems"
             ]
           };
-        
         case 'ehr-mistral':
           return {
             overview: "Intelligent Electronic Health Record system leveraging Mistral AI for advanced medical record processing and clinical decision support with natural language understanding capabilities.",
@@ -325,7 +311,6 @@ const Portfolio = () => {
               "Scalable architecture for healthcare providers"
             ]
           };
-        
         default:
           return {
             overview: "Project details coming soon...",
@@ -432,7 +417,6 @@ const Portfolio = () => {
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 {project.description}
               </p>
-              
               <div className="flex justify-center gap-4 mt-8">
                 <a
                   href={project.github}
@@ -453,8 +437,8 @@ const Portfolio = () => {
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-3 justify-center mb-16">
               {project.tech.map((tech) => (
-                <span 
-                  key={tech} 
+                <span
+                  key={tech}
                   className="px-4 py-2 rounded-full text-sm font-medium text-black"
                   style={{ backgroundColor: 'rgb(253, 191, 5)' }}
                 >
@@ -469,7 +453,7 @@ const Portfolio = () => {
         <section className="pb-16">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12">
-              
+
               {/* Overview */}
               <div className="p-8 rounded-xl" style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -540,8 +524,8 @@ const Portfolio = () => {
                             border: '2px solid rgba(253, 191, 5, 0.3)'
                           }}>
                             {stepData.icon.startsWith('http') ? (
-                              <img 
-                                src={stepData.icon} 
+                              <img
+                                src={stepData.icon}
                                 alt={stepData.tool}
                                 className="w-12 h-12 object-contain"
                               />
@@ -573,7 +557,6 @@ const Portfolio = () => {
     );
   };
 
-  // If viewing a project detail, show that instead of main portfolio
   const currentProject = projects.find(p => p.id === currentView);
   if (currentProject) {
     return <ProjectDetail project={currentProject} />;
@@ -581,7 +564,7 @@ const Portfolio = () => {
 
   // Main Portfolio View
   return (
-    <div className="min-h-screen" style={{ 
+    <div className="min-h-screen" style={{
       background: 'linear-gradient(135deg, rgb(2, 0, 36) 0%, rgb(14, 19, 24) 50%, rgb(2, 0, 25) 100%)'
     }}>
       {/* Navigation */}
@@ -600,16 +583,12 @@ const Portfolio = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className={`text-white hover:text-yellow-400 transition-all duration-300 capitalize font-medium relative ${
-                    activeSection === item ? 'text-yellow-400' : ''
-                  }`}
-                  style={{ 
-                    color: activeSection === item ? 'rgb(253, 191, 5)' : 'rgb(255, 255, 255)'
-                  }}
+                  className="text-white hover:text-yellow-400 transition-all duration-300 capitalize font-medium relative"
+                  style={{ color: activeSection === item ? 'rgb(253, 191, 5)' : 'rgb(255, 255, 255)' }}
                 >
                   {item}
                   {activeSection === item && (
-                    <div 
+                    <div
                       className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full transition-all duration-300"
                       style={{ backgroundColor: 'rgb(253, 191, 5)' }}
                     />
@@ -625,14 +604,12 @@ const Portfolio = () => {
       <section id="home" className="min-h-screen flex items-center pt-20 pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="transition-all duration-1000 transform translate-y-0 opacity-100">
+            <div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
                 Hi, I'm{' '}
-                <span 
+                <span
                   className="bg-gradient-to-r bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))'
-                  }}
+                  style={{ backgroundImage: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))' }}
                 >
                   Anjali Ingle
                 </span>
@@ -641,11 +618,10 @@ const Portfolio = () => {
                 Data Analyst and Engineer
               </h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Masters student in Data Analytics Engineering at Northeastern University 
-                with specialized experience in ETL development, automated testing, and enterprise BI solutions. 
+                Masters student in Data Analytics Engineering at Northeastern University
+                with specialized experience in ETL development, automated testing, and enterprise BI solutions.
                 I focus on data quality, process optimization, and building scalable analytics platforms.
               </p>
-              
               <div className="flex items-center gap-6 mb-8">
                 <div className="flex items-center gap-2 text-gray-300">
                   <MapPin size={18} style={{ color: 'rgb(253, 191, 5)' }} />
@@ -660,9 +636,8 @@ const Portfolio = () => {
                   <span>Open to relocation</span>
                 </div>
               </div>
-
               <div className="flex gap-4">
-                <button 
+                <button
                   onClick={() => scrollToSection('projects')}
                   className="px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                   style={{
@@ -672,7 +647,7 @@ const Portfolio = () => {
                 >
                   View My Work
                 </button>
-                <button 
+                <button
                   onClick={() => scrollToSection('contact')}
                   className="border-2 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:bg-opacity-10"
                   style={{ borderColor: 'rgb(253, 191, 5)', color: 'rgb(253, 191, 5)' }}
@@ -681,10 +656,10 @@ const Portfolio = () => {
                 </button>
               </div>
             </div>
-            
-            <div className="flex justify-center transition-all duration-1000 delay-300 transform translate-y-0 opacity-100">
+
+            <div className="flex justify-center">
               <div className="relative">
-                <div 
+                <div
                   className="w-80 h-80 rounded-full flex items-center justify-center relative overflow-hidden"
                   style={{
                     background: 'linear-gradient(135deg, rgba(253, 191, 5, 0.2), rgba(125, 42, 232, 0.2))',
@@ -692,7 +667,7 @@ const Portfolio = () => {
                     border: '3px solid rgba(253, 191, 5, 0.5)'
                   }}
                 >
-                  <img 
+                  <img
                     src="https://i.postimg.cc/Nf7ydSkR/picture.jpg"
                     alt="Anjali Ingle"
                     className="w-full h-full object-cover rounded-full"
@@ -710,11 +685,9 @@ const Portfolio = () => {
                     }}
                   />
                 </div>
-                <div 
+                <div
                   className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full flex items-center justify-center"
-                  style={{
-                    background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))'
-                  }}
+                  style={{ background: 'linear-gradient(45deg, rgb(253, 191, 5), rgb(125, 42, 232))' }}
                 >
                   <div className="text-2xl">📊</div>
                 </div>
@@ -727,28 +700,26 @@ const Portfolio = () => {
       {/* About Section */}
       <section id="about" className="py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             About <span style={{ color: 'rgb(253, 191, 5)' }}>Me</span>
           </h2>
-          
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="transition-all duration-1000 delay-200 transform translate-y-0 opacity-100">
+            <div>
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                I'm a Masters student in Data Analytics Engineering at Northeastern University with specialized experience 
-                in ETL development, data quality assurance, and enterprise BI solutions. My work spans semiconductor manufacturing, 
+                I'm a Masters student in Data Analytics Engineering at Northeastern University with specialized experience
+                in ETL development, data quality assurance, and enterprise BI solutions. My work spans semiconductor manufacturing,
                 marketing analytics, and customer engagement data across different industry domains.
               </p>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                I specialize in building automated data pipelines, developing Power BI dashboards for production insights, 
-                and implementing test automation for data validation. My experience includes working with enterprise tools 
+                I specialize in building automated data pipelines, developing Power BI dashboards for production insights,
+                and implementing test automation for data validation. My experience includes working with enterprise tools
                 like Databricks, Snowflake, and Power Automate to deliver scalable analytics solutions.
               </p>
             </div>
-            
-            <div className="transition-all duration-1000 delay-400 transform translate-y-0 opacity-100">
+            <div>
               <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
               <div className="space-y-6">
-                <div 
+                <div
                   className="flex items-start gap-4 p-6 rounded-xl transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'rgba(255, 255, 255, 0.1)',
@@ -756,11 +727,11 @@ const Portfolio = () => {
                     border: '1px solid rgba(255, 255, 255, 0.1)'
                   }}
                 >
-                  <div 
+                  <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center p-1"
                     style={{ background: 'rgba(255, 255, 255, 0.9)' }}
                   >
-                    <img 
+                    <img
                       src="https://i.postimg.cc/SKCtRH21/NU-RGB-seal-R.png"
                       alt="Northeastern University"
                       className="w-10 h-10 object-contain"
@@ -770,13 +741,10 @@ const Portfolio = () => {
                     <h4 className="font-bold text-white">Masters in Data Analytics Engineering</h4>
                     <p className="font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Northeastern University</p>
                     <p className="text-gray-300">Boston, MA • 2023-2025</p>
-                    <p className="text-sm text-gray-400 mt-1">
-                      Data Management, Machine Learning, Computational Visualization
-                    </p>
+                    <p className="text-sm text-gray-400 mt-1">Data Management, Machine Learning, Computational Visualization</p>
                   </div>
                 </div>
-                
-                <div 
+                <div
                   className="flex items-start gap-4 p-6 rounded-xl transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'rgba(255, 255, 255, 0.1)',
@@ -784,11 +752,11 @@ const Portfolio = () => {
                     border: '1px solid rgba(255, 255, 255, 0.1)'
                   }}
                 >
-                  <div 
+                  <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center p-1"
                     style={{ background: 'rgba(255, 255, 255, 0.9)' }}
                   >
-                    <img 
+                    <img
                       src="https://i.postimg.cc/htrkcfwZ/Vishwakarma-Institute-of-Technology.png"
                       alt="SPPU"
                       className="w-10 h-10 object-contain"
@@ -798,9 +766,7 @@ const Portfolio = () => {
                     <h4 className="font-bold text-white">Bachelor of Technology in Information Technology</h4>
                     <p className="font-medium" style={{ color: 'rgb(253, 191, 5)' }}>Savitribai Phule Pune University</p>
                     <p className="text-gray-300">Pune, India • 2018-2022</p>
-                    <p className="text-sm text-gray-400 mt-1">
-                      Data Structures, DBMS, AI, Business Intelligence
-                    </p>
+                    <p className="text-sm text-gray-400 mt-1">Data Structures, DBMS, AI, Business Intelligence</p>
                   </div>
                 </div>
               </div>
@@ -812,15 +778,14 @@ const Portfolio = () => {
       {/* Experience Section */}
       <section id="experience" className="py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             Professional <span style={{ color: 'rgb(253, 191, 5)' }}>Experience</span>
           </h2>
-          
           <div className="space-y-8">
             {experience.map((job, index) => (
-              <div 
+              <div
                 key={index}
-                className="p-8 rounded-xl transition-all duration-1000 transform hover:scale-105 translate-y-0 opacity-100"
+                className="p-8 rounded-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
@@ -828,19 +793,15 @@ const Portfolio = () => {
                 }}
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-lg flex items-center justify-center p-2 bg-white">
-                    {job.logo.startsWith('http') ? (
-                      <img 
-                        src={job.logo} 
-                        alt={job.company}
-                        className="w-12 h-12 object-contain"
-                      />
-                    ) : (
-                      <div className="text-gray-800 font-bold text-2xl">{job.logo}</div>
-                    )}
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center p-2 bg-white flex-shrink-0">
+                    <img
+                      src={job.logo}
+                      alt={job.company}
+                      className="w-12 h-12 object-contain"
+                    />
                   </div>
                   <div className="flex-1">
-                    <div className="flex justify-between items-start mb-4">
+                    <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
                       <div>
                         <h3 className="text-2xl font-bold text-white">{job.position}</h3>
                         <p className="text-xl font-medium" style={{ color: 'rgb(253, 191, 5)' }}>{job.company}</p>
@@ -851,7 +812,7 @@ const Portfolio = () => {
                     <ul className="space-y-2">
                       {job.achievements.map((achievement, i) => (
                         <li key={i} className="text-gray-300 flex items-start gap-2">
-                          <span style={{ color: 'rgb(253, 191, 5)' }} className="mt-2">•</span>
+                          <span style={{ color: 'rgb(253, 191, 5)' }} className="mt-1 flex-shrink-0">•</span>
                           <span>{achievement}</span>
                         </li>
                       ))}
@@ -867,15 +828,14 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             Featured <span style={{ color: 'rgb(253, 191, 5)' }}>Projects</span>
           </h2>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div 
+            {projects.map((project) => (
+              <div
                 key={project.id}
-                className="rounded-xl overflow-hidden transition-all duration-1000 transform hover:scale-105 hover:shadow-2xl translate-y-0 opacity-100 cursor-pointer"
+                className="rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
@@ -891,13 +851,11 @@ const Portfolio = () => {
                       <h3 className="text-xl font-bold text-white">{project.title}</h3>
                     </div>
                   </div>
-                  
                   <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-                  
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech) => (
-                      <span 
-                        key={tech} 
+                      <span
+                        key={tech}
                         className="px-3 py-1 rounded-full text-sm font-medium text-black"
                         style={{ backgroundColor: 'rgb(253, 191, 5)' }}
                       >
@@ -905,14 +863,13 @@ const Portfolio = () => {
                       </span>
                     ))}
                   </div>
-                  
                   <div className="flex justify-between items-center">
                     <div className="text-sm text-gray-400 italic">Click to view details</div>
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+                      className="text-gray-400 hover:text-white transition-colors"
                       title="View Source Code"
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -929,13 +886,12 @@ const Portfolio = () => {
       {/* Dashboards Section */}
       <section id="dashboards" className="py-16 bg-black/20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             Analytics <span style={{ color: 'rgb(253, 191, 5)' }}>Dashboards</span>
           </h2>
-          
           <div className="grid md:grid-cols-2 gap-12">
             {/* Power BI Dashboard */}
-            <div 
+            <div
               className="rounded-xl overflow-hidden transition-all duration-300 hover:scale-105"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -951,36 +907,30 @@ const Portfolio = () => {
                     <h3 className="text-2xl font-bold text-white">Enterprise HR Analytics</h3>
                   </div>
                 </div>
-                
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Comprehensive Power BI dashboard analyzing 1,000+ employee workforce across 5 departments. 
+                  Comprehensive Power BI dashboard analyzing 1,000+ employee workforce across 5 departments.
                   Features executive KPIs, performance analytics, and workforce insights managing $138M+ in total compensation.
-                  This multi-page dashboard demonstrates advanced Power BI development and data modeling skills.
                 </p>
-                
-                {/* Dashboard Preview */}
                 <div className="bg-gray-800 rounded-lg p-2 mb-4 overflow-hidden">
-                  <img 
+                  <img
                     src="https://i.postimg.cc/jSNTbgXv/C278683-F-7-FF8-4-B18-B93-D-9-C0-EB34-C040-C.png"
                     alt="Power BI HR Analytics Dashboard - Overview"
                     className="w-full h-auto rounded"
                   />
                   <div className="text-center text-gray-400 text-sm mt-2">Executive Overview Dashboard</div>
                 </div>
-                
                 <div className="bg-gray-800 rounded-lg p-2 mb-6 overflow-hidden">
-                  <img 
+                  <img
                     src="https://i.postimg.cc/7PcjZ1bR/8-B669535-A290-43-F7-AE1-A-E1-A5357-ACD0-F.png"
                     alt="Power BI HR Analytics Dashboard - Performance"
                     className="w-full h-auto rounded"
                   />
                   <div className="text-center text-gray-400 text-sm mt-2">Performance Analytics Dashboard</div>
                 </div>
-                
                 <div className="flex flex-wrap gap-2 mb-6">
                   {['Power BI', 'DAX', 'Data Modeling', 'KPIs', 'Interactive Filters'].map((tech) => (
-                    <span 
-                      key={tech} 
+                    <span
+                      key={tech}
                       className="px-3 py-1 rounded-full text-sm font-medium text-black"
                       style={{ backgroundColor: 'rgb(253, 191, 5)' }}
                     >
@@ -988,17 +938,14 @@ const Portfolio = () => {
                     </span>
                   ))}
                 </div>
-                
-                <div className="flex gap-4">
-                  <button className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all hover:scale-105">
-                    View Dashboard Screenshots
-                  </button>
-                </div>
+                <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all hover:scale-105">
+                  View Dashboard Screenshots
+                </button>
               </div>
             </div>
 
-            {/* Tableau Dashboard - To Be Developed */}
-            <div 
+            {/* Tableau Dashboard */}
+            <div
               className="rounded-xl overflow-hidden transition-all duration-300 hover:scale-105"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -1014,23 +961,19 @@ const Portfolio = () => {
                     <h3 className="text-2xl font-bold text-white">Financial Analytics Dashboard</h3>
                   </div>
                 </div>
-                
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Interactive Tableau dashboard for financial performance analytics, featuring advanced data 
+                  Interactive Tableau dashboard for financial performance analytics, featuring advanced data
                   visualization techniques for business intelligence and strategic decision-making.
                 </p>
-                
-                {/* Coming Soon Preview */}
                 <div className="bg-gray-800 rounded-lg p-6 mb-6 text-center">
                   <div className="text-6xl mb-4">🚧</div>
                   <div className="text-gray-300 font-medium">Tableau Dashboard</div>
                   <div className="text-gray-400 text-sm">In Development</div>
                 </div>
-                
                 <div className="flex flex-wrap gap-2 mb-6">
                   {['Tableau Public', 'Advanced Analytics', 'Interactive Viz', 'Business Intelligence'].map((tech) => (
-                    <span 
-                      key={tech} 
+                    <span
+                      key={tech}
                       className="px-3 py-1 rounded-full text-sm font-medium text-black"
                       style={{ backgroundColor: 'rgb(253, 191, 5)' }}
                     >
@@ -1038,12 +981,9 @@ const Portfolio = () => {
                     </span>
                   ))}
                 </div>
-                
-                <div className="flex gap-4">
-                  <button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-all hover:scale-105">
-                    Coming Soon - Tableau Public
-                  </button>
-                </div>
+                <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-all hover:scale-105">
+                  Coming Soon - Tableau Public
+                </button>
               </div>
             </div>
           </div>
@@ -1053,15 +993,14 @@ const Portfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 transform translate-y-0 opacity-100">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             Technical <span style={{ color: 'rgb(253, 191, 5)' }}>Skills</span>
           </h2>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skillGroup, index) => (
-              <div 
+              <div
                 key={index}
-                className="p-6 rounded-xl transition-all duration-1000 transform hover:scale-105 translate-y-0 opacity-100"
+                className="p-6 rounded-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
@@ -1074,8 +1013,8 @@ const Portfolio = () => {
                 </div>
                 <div className="space-y-2">
                   {skillGroup.items.map((skill) => (
-                    <div 
-                      key={skill} 
+                    <div
+                      key={skill}
                       className="px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 hover:scale-105"
                       style={{
                         background: 'rgba(253, 191, 5, 0.2)',
@@ -1095,16 +1034,15 @@ const Portfolio = () => {
       {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 transition-all duration-1000 transform translate-y-0 opacity-100">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
             Let's <span style={{ color: 'rgb(253, 191, 5)' }}>Connect</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto transition-all duration-1000 delay-200 transform translate-y-0 opacity-100">
-            I'm always interested in discussing data engineering opportunities, 
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            I'm always interested in discussing data engineering opportunities,
             ML projects, or potential collaborations. Let's build something amazing together!
           </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12 transition-all duration-1000 delay-400 transform translate-y-0 opacity-100">
-            <div 
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div
               className="p-6 rounded-xl transition-all duration-300 hover:scale-105"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -1116,7 +1054,7 @@ const Portfolio = () => {
               <h3 className="font-bold text-white mb-2">Email</h3>
               <p className="text-gray-300">ingle.a@northeastern.edu</p>
             </div>
-            <div 
+            <div
               className="p-6 rounded-xl transition-all duration-300 hover:scale-105"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -1128,7 +1066,7 @@ const Portfolio = () => {
               <h3 className="font-bold text-white mb-2">Phone</h3>
               <p className="text-gray-300">(617) 372-0345</p>
             </div>
-            <div 
+            <div
               className="p-6 rounded-xl transition-all duration-300 hover:scale-105"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -1141,8 +1079,7 @@ const Portfolio = () => {
               <p className="text-gray-300">Boston, MA, USA</p>
             </div>
           </div>
-          
-          <div className="flex justify-center gap-6 transition-all duration-1000 delay-600 transform translate-y-0 opacity-100">
+          <div className="flex justify-center gap-6 flex-wrap">
             <a
               href="mailto:ingle.a@northeastern.edu"
               className="px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2"
