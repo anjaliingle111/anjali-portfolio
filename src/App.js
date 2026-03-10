@@ -106,11 +106,12 @@ const Portfolio = () => {
       logo: "https://i.postimg.cc/7YyBQq6B/Entegris-Logo.png",
       color: "from-blue-500 to-purple-600",
       achievements: [
-        "Led ETL & data warehousing efforts for semiconductor manufacturing data, ensuring high accuracy for production reporting using SQL and Python",
-        "Developed automated Power BI dashboards for production defect analysis and product reliability, enabling engineers to act on insights swiftly",
-        "Implemented Python-based test automation scripts for backend data validation, reducing manual testing efforts and increasing verification efficiency",
-        "Conducted data quality monitoring and audit processes for semiconductor production data, collaborating with engineering teams to resolve discrepancies",
-        "Optimized data pipelines in manufacturing processes, improving overall data flow and influencing key manufacturing KPIs"
+          "Developed Power Apps Model-driven applications and Power Automate workflows integrated with Dataverse and SQL 
+          databases processing 1000+ monthly records using Agile methodologies." 
+          "Implemented integration patterns with REST APIs, JSON, and XML for SAP connectivity, conducting code reviews to 
+           confirm adherence to best practices."
+          "Managed environment management using Azure DevOps and CoE toolkit, confirming solutions align with compliance, 
+            governance, and risk management requirements ensuring data handling security."
       ]
     },
     {
@@ -121,26 +122,28 @@ const Portfolio = () => {
       logo: "https://i.postimg.cc/xCzkwDC5/nexdigm-og-img.jpg",
       color: "from-green-400 to-emerald-500",
       achievements: [
-        "Built ETL processes for seamless integration of sales and customer data into central databases, enhancing overall data pipeline efficiency",
-        "Cleansed and transformed marketing campaign data using SQL and Power BI, ensuring high-quality datasets for reporting and analysis",
-        "Designed automated reporting pipelines using Power Automate and Power BI, improving reporting accuracy and reducing manual labor",
-        "Collaborated with marketing and sales teams to define key data metrics and ensure data integrity across multiple sources",
-        "Developed custom Power BI dashboards supporting data-driven decision making for marketing and business teams"
+    "Built Power Apps Canvas applications and Power Automate workflows using Copilot technologies across 12 APAC markets, 
+    integrating REST APIs for CRM connectivity."
+    "Developed Power BI reports and M365 agent solutions for document search and reporting scenarios, providing regular 
+     updates on project status and outcomes." 
+    "Collaborated cross-functionally guiding teams on technical standards and solution architecture, supporting enablement and 
+      training sessions promoting safe citizen development practices."
       ]
     },
     {
-      company: "ITC TECHNOLOGIES",
-      position: "Data Analyst",
-      location: "Pune, India",
-      duration: "Jan 2021 - Dec 2021 (1 year)",
-      logo: "https://i.postimg.cc/rwDQDsYw/logoitc-0.jpg",
+      company: "IST Management",
+      position: "Operations Analyst",
+      location: "Boston, India",
+      duration: "Jan 2025 - Dec 2025 (1 year)",
+      logo: "data:image/jpeg;base64,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",
       color: "from-purple-500 to-pink-500",
       achievements: [
-        "Conducted extensive data cleaning and validation for customer engagement data, significantly improving data quality for analysis",
-        "Used SQL to generate actionable insights from raw data, providing accurate and timely reporting to stakeholders",
-        "Built custom Power BI dashboards supporting marketing and business teams in making data-driven decisions",
-        "Identified and implemented process optimization improvements in data collection and reporting, leading to more efficient workflows",
-        "Delivered comprehensive data analysis and reporting solutions that enhanced business intelligence capabilities"
+        "Designed and implemented agentic AI solutions using Copilot Studio and Azure AI Foundry, developing Power Apps (Canvas 
+        and Model-driven) and Power Automate workflows."
+        "Architected applications with Dataverse and AI Builder processing 50K+ daily records, implementing environment 
+        management, CoE toolkit, and tenant-level security controls for governance."
+        "Engaged with stakeholders to gather requirements translating them into technical specifications, monitoring application 
+        performance optimizing for speed, scalability, and user experience." 
       ]
     }
   ];
