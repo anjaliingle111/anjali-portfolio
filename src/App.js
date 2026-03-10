@@ -99,6 +99,19 @@ const Portfolio = () => {
 
   const experience = [
     {
+      company: "IST Management",
+      position: "Operations Analyst",
+      location: "Boston, MA",
+      duration: "Jan 2025 - Dec 2025 (1 year)",
+      logo: "https://irp-cdn.multiscreensite.com/26464d21/dms3rep/multi/IST+Logo+2020+V4.png",
+      color: "from-purple-500 to-pink-500",
+      achievements: [
+        "Designed and implemented agentic AI solutions using Copilot Studio and Azure AI Foundry, developing Power Apps (Canvas and Model-driven) and Power Automate workflows.",
+        "Architected applications with Dataverse and AI Builder processing 50K+ daily records, implementing environment management, CoE toolkit, and tenant-level security controls for governance.",
+        "Engaged with stakeholders to gather requirements translating them into technical specifications, monitoring application performance optimizing for speed, scalability, and user experience."
+      ]
+    },
+    {
       company: "ENTEGRIS",
       position: "Data Analyst",
       location: "Chicago, Illinois",
@@ -122,19 +135,6 @@ const Portfolio = () => {
         "Built Power Apps Canvas applications and Power Automate workflows using Copilot technologies across 12 APAC markets, integrating REST APIs for CRM connectivity.",
         "Developed Power BI reports and M365 agent solutions for document search and reporting scenarios, providing regular updates on project status and outcomes.",
         "Collaborated cross-functionally guiding teams on technical standards and solution architecture, supporting enablement and training sessions promoting safe citizen development practices."
-      ]
-    },
-    {
-      company: "IST Management",
-      position: "Operations Analyst",
-      location: "Boston, MA",
-      duration: "Jan 2025 - Dec 2025 (1 year)",
-      logo: "https://i.postimg.cc/7YyBQq6B/Entegris-Logo.png",
-      color: "from-purple-500 to-pink-500",
-      achievements: [
-        "Designed and implemented agentic AI solutions using Copilot Studio and Azure AI Foundry, developing Power Apps (Canvas and Model-driven) and Power Automate workflows.",
-        "Architected applications with Dataverse and AI Builder processing 50K+ daily records, implementing environment management, CoE toolkit, and tenant-level security controls for governance.",
-        "Engaged with stakeholders to gather requirements translating them into technical specifications, monitoring application performance optimizing for speed, scalability, and user experience."
       ]
     }
   ];
